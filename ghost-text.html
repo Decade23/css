@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghost Text</title>
+  </head>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      text-transform: uppercase;
+      letter-spacing: 10px;
+      flex-direction: row-reverse;
+    }
+
+    ul li {
+      color: black;
+      font-weight: bold;
+      font-size: 2em;
+      transition: 4s;
+      filter: blur(1px);
+    }
+
+    ul li:hover,
+    ul li:hover ~ li {
+      transform: rotate(180deg) translateY(200px);
+      transition: 2s;
+      filter: blur(20px);
+      opacity: 0;
+    }
+  </style>
+  <body>
+    <ul>
+      <li>o</li>
+      <li>t</li>
+      <li>n</li>
+      <li>a</li>
+      <li>y</li>
+      <li>i</li>
+      <li>d</li>
+      <li>r</li>
+      <li>a</li>
+      <li>f</li>
+      <li>_</li>
+      <li>i</li>
+      <li>d</li>
+      <li>e</li>
+      <li>d</li>
+    </ul>
+  </body>
+</html>

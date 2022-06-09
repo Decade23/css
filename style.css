@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: cursive;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #006bc6, #1ecafc);
+}
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container h2 {
+  position: absolute;
+  color: #fff;
+}
+
+.loader {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.25);
+  filter: url("#Gooey");
+}
+
+.loader span {
+  position: absolute;
+  background: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: animate 5s ease-in-out infinite;
+  left: 0;
+  animation-delay: calc(0.15s * var(--i));
+  /* top: 0; */
+  transform-origin: 150px;
+}
+
+@keyframes animate {
+  0%,
+  10% {
+    height: 100px;
+    width: 100px;
+    transform: rotate(0deg) translateX(120px);
+  }
+  40%,
+  70% {
+    height: 40px;
+    width: 40px;
+    transform: rotate(calc(360deg / 8 * var(--i)));
+    box-shadow: 0 0 0 10px #fff;
+  }
+  90%,
+  100% {
+    width: 100px;
+    height: 100px;
+    transform: rotate(0deg) translateX(120px);
+  }
+}
+
+svg {
+  width: 0;
+  height: 0;
+}

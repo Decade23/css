@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      height: 100vh;
+      width: 100%;
+      background: url(bg3.jpg);
+      background-size: cover;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    .container .wave {
+      position: absolute;
+      height: 143px;
+      width: 100%;
+      background: url(wave.png);
+      bottom: 0;
+      left: 0;
+      animation: animate 10s linear infinite;
+    }
+
+    .container .wave::before {
+      content: "";
+      top: 0;
+      left: 0;
+      opacity: 0.4;
+      background: url(wave.png);
+      animation: animate-reverse 10s linear infinite;
+      animation-delay: -5s;
+      position: absolute;
+      height: 143px;
+      width: 100%;
+    }
+
+    .container .wave::after {
+      content: "";
+      top: 0;
+      left: 0;
+      opacity: 0.6;
+      background: url(wave.png);
+      animation: animate 20s linear infinite;
+      animation-delay: -5s;
+      position: absolute;
+      height: 143px;
+      width: 100%;
+    }
+
+    @keyframes animate {
+      0% {
+        background-position: 0;
+      }
+      100% {
+        background-position: 1360px;
+      }
+    }
+    @keyframes animate-reverse {
+      0% {
+        background-position: 1360px;
+      }
+      100% {
+        background-position: 10;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <section class="wave"></section>
+    </div>
+  </body>
+</html>
